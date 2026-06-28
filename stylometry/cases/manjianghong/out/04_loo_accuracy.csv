@@ -1,0 +1,4 @@
+view,n_classes,n_docs,loo_accuracy
+func,2,36,0.6389
+uni,2,36,0.8056
+bi,2,36,0.6944

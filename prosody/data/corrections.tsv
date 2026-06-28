@@ -1,0 +1,13 @@
+# Local corrections to data/phonology.tsv (upstream 平水韵 / 词林正韵 dataset).
+# Each non-comment row is MERGED into the upstream entry (tones and rhyme groups
+# are unioned), so this file only needs to list what upstream is missing.
+#
+# Format (tab-separated, identical to phonology.tsv):
+#   char <TAB> tones <TAB> pingshui-groups <TAB> cilin-bu
+#   tones        : any of 平 上 去 入
+#   pingshui-groups : comma list of TAG:NAME, TAG in {P=平,S=上,Q=去,R=入}
+#   cilin-bu     : comma list of 词林正韵 部
+#
+# Found while validating against canonical rhyming poems:
+先	平	P:一先	第七部
+樽	平	P:十三元	第六部

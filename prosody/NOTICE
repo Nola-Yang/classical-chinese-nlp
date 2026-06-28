@@ -1,0 +1,25 @@
+pingze — data provenance
+=========================
+
+The source code in this repository is original work, licensed under the MIT
+License (see LICENSE).
+
+The linguistic data files under data/ are DERIVED from third-party open data and
+classical reference works:
+
+* data/phonology.tsv  and  data/cipu.dat
+  Reprocessed (re-tagged, compacted, and re-encoded) from:
+    charlesix59/chinese_word_rhyme
+    https://github.com/charlesix59/chinese_word_rhyme
+  which itself digitises the classical rime books and prosody manuals:
+    《平水韵》   (Píngshuǐ rimes, the 106-rime standard for 近体诗)
+    《词林正韵》 (Cílín Zhèngyùn, the 19-部 rhyme standard for 词)
+    《钦定词谱》 (Qīndìng Cípǔ, the imperial register of 词 metrical patterns)
+  augmented with the 定格/变格 templates from 龙榆生《唐宋词格律》.
+
+* data/corrections.tsv
+  Original: a small overlay of corrections to the upstream phonology table,
+  found by validating against canonical rhyming poems.
+
+These classical works are in the public domain. The upstream dataset is used
+under its own license; please consult the linked repository for its terms.

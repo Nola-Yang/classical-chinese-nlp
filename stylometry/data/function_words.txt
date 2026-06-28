@@ -1,0 +1,11 @@
+# Classical Chinese function words / high-frequency grammatical characters.
+# These are (largely) topic-independent, so their relative frequencies act as a
+# stylistic fingerprint — the basis for Burrows's Delta and the function-word
+# cosine. All CJK characters in this file are loaded; everything else is ignored.
+#
+# 文言虚词 / 高频语法字:
+之乎者也矣焉哉耳兮而以于於其则乃且因由从向与及至故若如苟虽纵但
+不非弗未莫勿无亦又犹尚已即既必当应须将欲能可得方更最甚颇略
+何谁孰安岂宁是此彼斯夫盖凡所自相为
+处却待还空漫只惟唯独都尽满复向归来去上下中前后
+余予我吾臣君卿尔汝子

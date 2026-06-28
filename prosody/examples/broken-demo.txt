@@ -1,0 +1,6 @@
+# A deliberately broken 五绝, to show the diagnostics.
+# It "sounds" fine in Mandarin, but: 白/雪 are 入声 (so 仄), which makes the
+# even-line rhymes oblique — illegal in 近体诗, which must rhyme in 平声.
+# Several interior tones are wrong too.
+青山隐隐月，绿水悠悠白。
+欲寄相思人，天涯一江雪。
