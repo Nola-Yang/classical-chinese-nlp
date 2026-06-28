@@ -1,0 +1,25 @@
+corpus: 50 docs | controls=40 target(贺双卿)=10 | vocab=200 (uni+bi, top 200)
+
+=== Task 1: gender classifier (1=woman, 0=man) ===
+  training docs: 40 (20 woman / 20 man) | majority baseline = 0.50
+  Naive Bayes      LOO-CV accuracy = 0.725
+  LogReg (tf-idf)  LOO-CV accuracy = 0.625
+
+  贺双卿 predictions (P = P(woman)):
+    凤凰台上忆吹箫·寸寸微云            NB P(woman)=0.82  LR P(woman)=0.52
+    惜黄花慢·孤雁                 NB P(woman)=0.14  LR P(woman)=0.51
+    望江南·春不见                 NB P(woman)=0.00  LR P(woman)=0.44
+    薄幸·咏疟                   NB P(woman)=0.15  LR P(woman)=0.47
+    春从天上来·饷耕                NB P(woman)=0.99  LR P(woman)=0.51
+    摸鱼儿·谢邻女韩西馈食             NB P(woman)=0.00  LR P(woman)=0.44
+    湿罗衣·世间难吐是幽情             NB P(woman)=0.94  LR P(woman)=0.51
+    一剪梅·寒热如潮势未平             NB P(woman)=1.00  LR P(woman)=0.55
+    凤凰台上忆吹箫·残灯              NB P(woman)=0.00  LR P(woman)=0.42
+    春从天上来·梅花                NB P(woman)=0.89  LR P(woman)=0.54
+  → NB: 5/10 poems called 'woman';  LR: 6/10 'woman'
+
+=== Task 2: author classifier (4 classes: 吴藻, 纳兰性德, 项鸿祚, 顾太清) ===
+  random baseline = 0.25
+  Naive Bayes  LOO-CV accuracy = 0.575
+  贺双卿 poems assigned to: {'吴藻': 4, '项鸿祚': 4, '纳兰性德': 2}
+  mean P(author) over 双卿's poems: 吴藻=0.44, 项鸿祚=0.38, 纳兰性德=0.17, 顾太清=0.02

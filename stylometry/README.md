@@ -70,6 +70,8 @@ permutation p > 0.18), while showing tf-idf is the most discriminative view and
 that her lexis leans, weakly, toward a *male* poet of her register. See each
 case's `out_advanced/` tables and write-up.
 
+A small **supervised-ML** companion — multinomial Naive Bayes + logistic regression, from scratch, LOO-cross-validated — lives in [`ml/`](ml). It reaches the same verdict with classifiers: the controls are learnable, but 贺双卿 lands on the decision boundary.
+
 ## Case studies
 
 ### A. 满江红·怒发冲冠 — *validation* ([`cases/manjianghong`](cases/manjianghong))

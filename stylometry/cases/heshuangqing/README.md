@@ -141,6 +141,8 @@ metric**. The one directional hint is that her most content-bearing features
 the skeptics' "too-literati" reading; but nothing is strong enough to convict
 史震林 or to fix her gender. The honest finding stands — now stress-tested.
 
+**Supervised ML too.** From-scratch Naive Bayes + logistic regression with leave-one-out CV ([`../../ml/`](../../ml)) tell the same story from another angle: the classifiers *can* learn author (NB 0.58) and gender (NB 0.73) on the controls, yet place 双卿 on the decision boundary — a 5/5 gender split and an author vote tied between a woman (吴藻) and a man (项鸿祚); the regularized model's verdict is literally P ≈ 0.5.
+
 *Scholarship: Paul S. Ropp, "Banished Immortal: Searching for Shuangqing, China's
 Peasant Woman Poet" (2001); Grace S. Fong on Ming–Qing women's writing; 杜芳琴,
 《痛史明心录》. This repository takes no position beyond the measurements.*
