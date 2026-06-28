@@ -1,0 +1,7 @@
+view,n_classes,n_docs,knn1_loo_accuracy,centroid_loo_accuracy
+func,4,40,0.1000,0.1500
+uni,4,40,0.3000,0.4750
+bigram,4,40,0.3000,0.4750
+mfw100,4,40,0.2500,0.3000
+tfidf-uni,4,40,0.4250,0.5250
+prosodic,4,40,0.3250,0.3750

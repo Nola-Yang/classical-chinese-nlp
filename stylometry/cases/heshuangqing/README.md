@@ -86,6 +86,61 @@ The character-bigram LM perplexities of 双卿 under each poet are essentially f
 > *inconclusive* — which, for a small-sample authorship question, is the honest
 > result.
 
+## Update — trying harder to distinguish (8 methods + a permutation test)
+
+The basic run left 双卿 unattributable, so a separate tool,
+[`stylo-advanced`](../../src/advanced.cpp), adds stronger and orthogonal methods:
+top-N most-frequent-character features, **Cosine Delta** (Eder), **tf-idf**-weighted
+cosine, **1-nearest-neighbour** LOO (per poem), **prosodic** features (平/仄/入声
+rates + tonal-contour bigrams, via the prosody subproject's 平水韵 table), and a
+**label-permutation test**.
+
+```bash
+../../build/stylo-advanced corpus --target 贺双卿 \
+    --phonology ../../../prosody/data/phonology.tsv --mfw 100 --perm 5000 --out out_advanced
+```
+
+**Which method actually separates the four control poets?** (LOO accuracy; chance ≈ 0.25)
+
+| method | 1-NN LOO | centroid LOO |
+|---|--:|--:|
+| function words | 0.10 | 0.15 |
+| single char | 0.30 | 0.48 |
+| char bigram | 0.30 | 0.48 |
+| top-100 MFW | 0.25 | 0.30 |
+| **tf-idf** | **0.43** | **0.53** |
+| prosodic (tonal) | 0.33 | 0.38 |
+
+tf-idf is clearly the strongest discriminator; prosody carries a *weak but real*
+signal; the function-word list is useless on this corpus.
+
+**Where does 双卿 land, across all methods?** Nearest group: 吴藻 (woman) by 4
+methods, 项鸿祚 (man) by 3, 顾太清 (woman) by 1 — and the two *most distinctive*
+methods **disagree**: tf-idf (lexis/imagery) puts **7/10** of her poems nearest a
+**man** (项鸿祚, a melancholic-register poet), while prosodic habit puts **8/10**
+nearest a **woman** — though every poet's prosodic cosine is ~0.98 (barely
+separable, since all 词 obey fixed 词谱 tonal templates).
+
+**Is any of it real?** The label-permutation test (5,000 shuffles) says no:
+
+| method | nearest | p-value |
+|---|---|--:|
+| prosodic | 项鸿祚 | 0.18 |
+| tf-idf | 项鸿祚 | 0.37 |
+| function / single-char / MFW | — | 0.75 – 0.97 |
+
+Not one method reaches significance (smallest p = 0.18): **双卿's nearest
+"author" is statistically indistinguishable from a random labelling.**
+
+### Revised verdict
+
+Eight methods — including ones that *do* separate other poets — still cannot
+attribute 双卿, so the inconclusive result is **robust, not an artefact of a blunt
+metric**. The one directional hint is that her most content-bearing features
+(tf-idf) lean toward a *male* literatus of her register, mildly consistent with
+the skeptics' "too-literati" reading; but nothing is strong enough to convict
+史震林 or to fix her gender. The honest finding stands — now stress-tested.
+
 *Scholarship: Paul S. Ropp, "Banished Immortal: Searching for Shuangqing, China's
 Peasant Woman Poet" (2001); Grace S. Fong on Ming–Qing women's writing; 杜芳琴,
 《痛史明心录》. This repository takes no position beyond the measurements.*

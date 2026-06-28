@@ -1,0 +1,7 @@
+view,observed_max_cos,nearest_group,perm_p_value,n_perm
+func,0.746,吴藻,0.7469,5000
+uni,0.550,项鸿祚,0.9422,5000
+bigram,0.039,顾太清,0.4905,5000
+mfw100,0.668,吴藻,0.9720,5000
+tfidf-uni,0.435,项鸿祚,0.3721,5000
+prosodic,0.998,项鸿祚,0.1812,5000

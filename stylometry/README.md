@@ -49,6 +49,27 @@ by `~~~~~`, each with a small header (`# 作者:`, `# 类别:`, …) and a `====
 before its body. `--group-field` chooses which header becomes the author label;
 `--target` marks the group whose attribution you care about.
 
+### Going further — `stylo-advanced`
+
+When the core methods leave a case unattributable, `stylo-advanced` adds a
+stronger and more orthogonal battery (kept in a separate binary so the validated
+`stylo` numbers never move): **top-N most-frequent-character** features,
+**Cosine Delta**, **tf-idf**-weighted cosine, **1-nearest-neighbour** LOO,
+**prosodic** features (平/仄/入声 rates + tonal-contour bigrams, reusing the
+prosody subproject's 平水韵 table), and a **label-permutation test** that asks
+whether a "nearest author" result is real or could arise from random labelling.
+
+```bash
+cmake --build build           # also builds ./build/stylo-advanced
+./build/stylo-advanced cases/heshuangqing/corpus --target 贺双卿 \
+    --phonology ../prosody/data/phonology.tsv --mfw 100 --perm 5000 --out out_adv
+```
+
+On the 贺双卿 case this confirms the negative result is robust (every method's
+permutation p > 0.18), while showing tf-idf is the most discriminative view and
+that her lexis leans, weakly, toward a *male* poet of her register. See each
+case's `out_advanced/` tables and write-up.
+
 ## Case studies
 
 ### A. 满江红·怒发冲冠 — *validation* ([`cases/manjianghong`](cases/manjianghong))

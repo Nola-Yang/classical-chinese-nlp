@@ -21,3 +21,7 @@ target_link_libraries(stylo_tests PRIVATE stylo_core)
 add_test(NAME stylo_tests COMMAND stylo_tests)
 
 install(TARGETS stylo RUNTIME DESTINATION bin)
+
+add_executable(stylo-advanced src/advanced.cpp)
+target_link_libraries(stylo-advanced PRIVATE stylo_core)
+install(TARGETS stylo-advanced RUNTIME DESTINATION bin)

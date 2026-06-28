@@ -1,0 +1,7 @@
+view,observed_max_cos,nearest_group,perm_p_value,n_perm
+func,0.431,发现存疑,0.0742,5000
+uni,0.444,发现存疑,0.0578,5000
+bigram,0.315,发现存疑,0.0390,5000
+mfw80,0.506,王越,0.6551,5000
+tfidf-uni,0.395,发现存疑,0.0586,5000
+prosodic,0.999,发现存疑,0.0184,5000

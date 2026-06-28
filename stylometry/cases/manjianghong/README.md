@@ -43,3 +43,19 @@ So the engine does not resolve the authorship — exactly as the Python study
 concluded. A clean negative result, and a clean validation of the tool. The
 *genuinely* anomalous signals (the 贺兰山 geography, the missing Song–Yuan
 transmission) are historical, not stylometric, and live in the companion repo.
+
+## Update — the same 8-method battery
+
+Re-run with [`stylo-advanced`](../../src/advanced.cpp) (top-N MFW, Cosine Delta,
+tf-idf, 1-NN LOO, prosodic features, permutation test). Two things stand out and
+both reinforce the original reading:
+
+* **The method genuinely can tell 岳飞 from 王越** here (unlike the 贺双卿 controls):
+  1-NN LOO reaches 0.78 (char bigram) and centroid LOO 0.81 (single char) — so a
+  null result on the disputed poem is *informative*, not just weak data.
+* **The disputed poem still flips.** Ignoring the near-duplicate 族谱 variants
+  (trivially closest), surface lexis (function-word / MFW / tf-idf cosine) leans
+  **王越**, while content bigrams, prosodic habit, and both Delta variants lean
+  **岳飞** — the same view-dependent ambiguity, now confirmed across eight methods.
+  The only permutation-significant "nearest" is the 族谱 near-duplicate (expected).
+
